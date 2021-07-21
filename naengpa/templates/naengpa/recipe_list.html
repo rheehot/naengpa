@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- vue 호출 -->
+    <script src="https://unpkg.com/vue"></script>
+
+    <title>냉파</title>
+</head>
+<body>
+    <div id = 'app'>
+            <center><p>[[ title ]]</p></center>
+        <ul>
+            <li v-for="recipe in recipe_list">
+                [[ recipe ]] 조리시간 : [[time]] <br>
+                필수재료 : [[ ingredient ]]<br>
+            </li>
+        </ul>
+    </div>
+
+    <!--
+    {% if recipe_list %}
+        <ul>
+            {% for recipe in recipe_list %}
+                <li><a href="/naengpa/{{recipe.id}}/">
+                    {{ recipe.name }}
+                </a>예상 조리시간 : {{ recipe.time }} 분</li>
+                <p>필수재료 : {{ recipe.need_ingredient }} </p>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p> 등록된 레시피가 없습니다.</p>
+    {% endif %}
+    -->
+</body>
+</html>
+
+<!-- p태그에 있는 title값 넣어주기
+# id == app인 tag 내부의 title에 data값 전달 -->
+<script>
+    new Vue({
+        delimiters:['[[',']]'],
+        el : '#app',
+        data : {
+            title : '냉장고를 파먹어보자',
+            recipe_list : views.
+            }
+        })
+</script>

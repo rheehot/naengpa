@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- vue 호출 -->
+    <script src="https://unpkg.com/vue"></script>
+
+    <title>My schedule</title>
+</head>
+<body>
+    <div id = 'app'>
+            <center><p>[[ title ]]</p></center>
+    </div>
+</body>
+</html>
+
+<!-- p태그에 있는 title값 넣어주기
+# id == app인 tag 내부의 title에 data값 전달 -->
+<script>
+    new Vue({
+        delimiters:['[[',']]'],
+        el : '#app',
+        data : {
+            title : '냉장고 파먹기',
+            }
+        })
+</script>
